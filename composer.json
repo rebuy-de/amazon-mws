@@ -1,0 +1,8 @@
+{
+    "name": "rebuy/amazon-mws",
+    "autoload": {
+        "psr-0": {
+            "MarketplaceWebService" : "library/"
+        } 
+    }
+}
