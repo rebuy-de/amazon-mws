@@ -4,5 +4,6 @@
         "psr-0": {
             "MarketplaceWebService" : "src/"
         } 
-    }
+    },
+    "include-path": ["src/"]
 }
