@@ -1,9 +1,7 @@
 {
     "name": "rebuy/amazon-mws",
     "autoload": {
-        "psr-0": {
-            "MarketplaceWebService" : "src/"
-        } 
+        "classmap": ["src/"]
     },
     "include-path": ["src/"]
 }
