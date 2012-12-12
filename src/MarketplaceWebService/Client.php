@@ -19,8 +19,8 @@
 /**
  *  @see MarketplaceWebService_Interface
  */
-require_once ('MarketplaceWebService/Interface.php');
-require_once ('RequestType.php');
+// require_once ('MarketplaceWebService/Interface.php');
+// require_once ('RequestType.php');
 
 define('CONVERTED_PARAMETERS_KEY', 'PARAMETERS');
 define('CONVERTED_HEADERS_KEY', 'HEADERS');
@@ -139,11 +139,11 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   private function constructUserAgentHeader($applicationName, $applicationVersion, $attributes = null) {
 
     if (is_null($applicationName) || $applicationName === "") {
-      throw new InvalidArguementException('$applicationName cannot be null.');
+      throw new InvalidArgumentException('$applicationName cannot be null.');
     }
      
     if (is_null($applicationVersion) || $applicationVersion === "") {
-      throw new InvalidArguementException('$applicationVersion cannot be null.');
+      throw new InvalidArgumentException('$applicationVersion cannot be null.');
     }
      
     $userAgent =
@@ -262,10 +262,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReport($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportRequest.php');
       $request = new MarketplaceWebService_Model_GetReportRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportResponse.php');
     return MarketplaceWebService_Model_GetReportResponse::fromXML(
     $this->invoke($this->convertGetReport($request), $request->getReport()));
   }
@@ -285,10 +285,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportScheduleCount($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportScheduleCountRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportScheduleCountRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportScheduleCountRequest.php');
       $request = new MarketplaceWebService_Model_GetReportScheduleCountRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportScheduleCountResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportScheduleCountResponse.php');
     return MarketplaceWebService_Model_GetReportScheduleCountResponse::fromXML($this->invoke($this->convertGetReportScheduleCount($request)));
   }
 
@@ -307,10 +307,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportRequestListByNextToken($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportRequestListByNextTokenRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportRequestListByNextTokenRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportRequestListByNextTokenRequest.php');
       $request = new MarketplaceWebService_Model_GetReportRequestListByNextTokenRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportRequestListByNextTokenResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportRequestListByNextTokenResponse.php');
     return MarketplaceWebService_Model_GetReportRequestListByNextTokenResponse::fromXML($this->invoke($this->convertGetReportRequestListByNextToken($request)));
   }
 
@@ -329,10 +329,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function updateReportAcknowledgements($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest) {
-      require_once ('MarketplaceWebService/Model/UpdateReportAcknowledgementsRequest.php');
+      // require_once ('MarketplaceWebService/Model/UpdateReportAcknowledgementsRequest.php');
       $request = new MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/UpdateReportAcknowledgementsResponse.php');
+    // require_once ('MarketplaceWebService/Model/UpdateReportAcknowledgementsResponse.php');
     return MarketplaceWebService_Model_UpdateReportAcknowledgementsResponse::fromXML($this->invoke($this->convertUpdateReportAcknowledgements($request)));
   }
 
@@ -355,10 +355,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function submitFeed($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_SubmitFeedRequest) {
-      require_once ('MarketplaceWebService/Model/SubmitFeedRequest.php');
+      // require_once ('MarketplaceWebService/Model/SubmitFeedRequest.php');
       $request = new MarketplaceWebService_Model_SubmitFeedRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/SubmitFeedResponse.php');
+    // require_once ('MarketplaceWebService/Model/SubmitFeedResponse.php');
     return MarketplaceWebService_Model_SubmitFeedResponse::fromXML(
     $this->invoke($this->convertSubmitFeed($request), $request->getFeedContent(), $request->getContentMd5()));
   }
@@ -380,10 +380,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportCount($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportCountRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportCountRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportCountRequest.php');
       $request = new MarketplaceWebService_Model_GetReportCountRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportCountResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportCountResponse.php');
     return MarketplaceWebService_Model_GetReportCountResponse::fromXML($this->invoke($this->convertGetReportCount($request)));
   }
 
@@ -402,10 +402,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getFeedSubmissionListByNextToken($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetFeedSubmissionListByNextTokenRequest) {
-      require_once ('MarketplaceWebService/Model/GetFeedSubmissionListByNextTokenRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetFeedSubmissionListByNextTokenRequest.php');
       $request = new MarketplaceWebService_Model_GetFeedSubmissionListByNextTokenRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetFeedSubmissionListByNextTokenResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetFeedSubmissionListByNextTokenResponse.php');
     return MarketplaceWebService_Model_GetFeedSubmissionListByNextTokenResponse::fromXML($this->invoke($this->convertGetFeedSubmissionListByNextToken($request)));
   }
 
@@ -425,10 +425,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function cancelFeedSubmissions($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_CancelFeedSubmissionsRequest) {
-      require_once ('MarketplaceWebService/Model/CancelFeedSubmissionsRequest.php');
+      // require_once ('MarketplaceWebService/Model/CancelFeedSubmissionsRequest.php');
       $request = new MarketplaceWebService_Model_CancelFeedSubmissionsRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/CancelFeedSubmissionsResponse.php');
+    // require_once ('MarketplaceWebService/Model/CancelFeedSubmissionsResponse.php');
     return MarketplaceWebService_Model_CancelFeedSubmissionsResponse::fromXML($this->invoke($this->convertCancelFeedSubmissions($request)));
   }
 
@@ -447,10 +447,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function requestReport($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_RequestReportRequest) {
-      require_once ('MarketplaceWebService/Model/RequestReportRequest.php');
+      // require_once ('MarketplaceWebService/Model/RequestReportRequest.php');
       $request = new MarketplaceWebService_Model_RequestReportRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/RequestReportResponse.php');
+    // require_once ('MarketplaceWebService/Model/RequestReportResponse.php');
     return MarketplaceWebService_Model_RequestReportResponse::fromXML($this->invoke($this->convertRequestReport($request)));
   }
 
@@ -469,10 +469,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getFeedSubmissionCount($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetFeedSubmissionCountRequest) {
-      require_once ('MarketplaceWebService/Model/GetFeedSubmissionCountRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetFeedSubmissionCountRequest.php');
       $request = new MarketplaceWebService_Model_GetFeedSubmissionCountRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetFeedSubmissionCountResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetFeedSubmissionCountResponse.php');
     return MarketplaceWebService_Model_GetFeedSubmissionCountResponse::fromXML($this->invoke($this->convertGetFeedSubmissionCount($request)));
   }
 
@@ -492,10 +492,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function cancelReportRequests($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_CancelReportRequestsRequest) {
-      require_once ('MarketplaceWebService/Model/CancelReportRequestsRequest.php');
+      // require_once ('MarketplaceWebService/Model/CancelReportRequestsRequest.php');
       $request = new MarketplaceWebService_Model_CancelReportRequestsRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/CancelReportRequestsResponse.php');
+    // require_once ('MarketplaceWebService/Model/CancelReportRequestsResponse.php');
     return MarketplaceWebService_Model_CancelReportRequestsResponse::fromXML($this->invoke($this->convertCancelReportRequests($request)));
   }
 
@@ -515,10 +515,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportList($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportListRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportListRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportListRequest.php');
       $request = new MarketplaceWebService_Model_GetReportListRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportListResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportListResponse.php');
     return MarketplaceWebService_Model_GetReportListResponse::fromXML($this->invoke($this->convertGetReportList($request)));
   }
 
@@ -537,10 +537,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getFeedSubmissionResult($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetFeedSubmissionResultRequest) {
-      require_once ('MarketplaceWebService/Model/GetFeedSubmissionResultRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetFeedSubmissionResultRequest.php');
       $request = new MarketplaceWebService_Model_GetFeedSubmissionResultRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetFeedSubmissionResultResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetFeedSubmissionResultResponse.php');
     return MarketplaceWebService_Model_GetFeedSubmissionResultResponse::fromXML(
     $this->invoke($this->convertGetFeedSubmissionResult($request), $request->getFeedSubmissionResult()));
   }
@@ -560,10 +560,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getFeedSubmissionList($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetFeedSubmissionListRequest) {
-      require_once ('MarketplaceWebService/Model/GetFeedSubmissionListRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetFeedSubmissionListRequest.php');
       $request = new MarketplaceWebService_Model_GetFeedSubmissionListRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetFeedSubmissionListResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetFeedSubmissionListResponse.php');
     return MarketplaceWebService_Model_GetFeedSubmissionListResponse::fromXML($this->invoke($this->convertGetFeedSubmissionList($request)));
   }
 
@@ -582,10 +582,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportRequestList($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportRequestListRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportRequestListRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportRequestListRequest.php');
       $request = new MarketplaceWebService_Model_GetReportRequestListRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportRequestListResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportRequestListResponse.php');
     return MarketplaceWebService_Model_GetReportRequestListResponse::fromXML($this->invoke($this->convertGetReportRequestList($request)));
   }
 
@@ -604,10 +604,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportScheduleListByNextToken($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportScheduleListByNextTokenRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportScheduleListByNextTokenRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportScheduleListByNextTokenRequest.php');
       $request = new MarketplaceWebService_Model_GetReportScheduleListByNextTokenRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportScheduleListByNextTokenResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportScheduleListByNextTokenResponse.php');
     return MarketplaceWebService_Model_GetReportScheduleListByNextTokenResponse::fromXML($this->invoke($this->convertGetReportScheduleListByNextToken($request)));
   }
 
@@ -626,10 +626,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportListByNextToken($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportListByNextTokenRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportListByNextTokenRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportListByNextTokenRequest.php');
       $request = new MarketplaceWebService_Model_GetReportListByNextTokenRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportListByNextTokenResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportListByNextTokenResponse.php');
     return MarketplaceWebService_Model_GetReportListByNextTokenResponse::fromXML($this->invoke($this->convertGetReportListByNextToken($request)));
   }
 
@@ -649,10 +649,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function manageReportSchedule($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_ManageReportScheduleRequest) {
-      require_once ('MarketplaceWebService/Model/ManageReportScheduleRequest.php');
+      // require_once ('MarketplaceWebService/Model/ManageReportScheduleRequest.php');
       $request = new MarketplaceWebService_Model_ManageReportScheduleRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/ManageReportScheduleResponse.php');
+    // require_once ('MarketplaceWebService/Model/ManageReportScheduleResponse.php');
     return MarketplaceWebService_Model_ManageReportScheduleResponse::fromXML($this->invoke($this->convertManageReportSchedule($request)));
   }
 
@@ -672,10 +672,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportRequestCount($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportRequestCountRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportRequestCountRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportRequestCountRequest.php');
       $request = new MarketplaceWebService_Model_GetReportRequestCountRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportRequestCountResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportRequestCountResponse.php');
     return MarketplaceWebService_Model_GetReportRequestCountResponse::fromXML($this->invoke($this->convertGetReportRequestCount($request)));
   }
 
@@ -694,10 +694,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   public function getReportScheduleList($request)
   {
     if (!$request instanceof MarketplaceWebService_Model_GetReportScheduleListRequest) {
-      require_once ('MarketplaceWebService/Model/GetReportScheduleListRequest.php');
+      // require_once ('MarketplaceWebService/Model/GetReportScheduleListRequest.php');
       $request = new MarketplaceWebService_Model_GetReportScheduleListRequest($request);
     }
-    require_once ('MarketplaceWebService/Model/GetReportScheduleListResponse.php');
+    // require_once ('MarketplaceWebService/Model/GetReportScheduleListResponse.php');
     return MarketplaceWebService_Model_GetReportScheduleListResponse::fromXML(
     $this->invoke($this->convertGetReportScheduleList($request)));
   }
@@ -772,7 +772,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
           		
           	case 500:
           	case 503:
-          		require_once('MarketplaceWebService/Model/ErrorResponse.php');
+          		// require_once('MarketplaceWebService/Model/ErrorResponse.php');
 		          $errorResponse = MarketplaceWebService_Model_ErrorResponse::fromXML($response['ResponseBody']);
 		          
 		          // We will not retry throttling errors since this would just add to the throttling problem.
@@ -794,7 +794,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
           
           /* Rethrow on deserializer error */
         } catch (Exception $e) {
-          require_once ('MarketplaceWebService/Exception.php');
+          // require_once ('MarketplaceWebService/Exception.php');
             throw new MarketplaceWebService_Exception(array('Exception' => $e, 'Message' => $e->getMessage()));
         }
 
@@ -822,7 +822,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
         $code = $errorMatcherOne[2];
         $message = $errorMatcherOne[3];
 
-        require_once ('MarketplaceWebService/Exception.php');
+        // require_once ('MarketplaceWebService/Exception.php');
         $ex = new MarketplaceWebService_Exception(array ('Message' => $message, 'StatusCode' => $status, 'ErrorCode' => $code,
                                                            'ErrorType' => 'Unknown', 'RequestId' => $requestId, 'XML' => $responseBody));
 
@@ -832,7 +832,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
         $code = $errorMatcherTwo[1];
         $message = $errorMatcherTwo[2];
         $requestId = $errorMatcherTwo[4];
-        require_once ('MarketplaceWebService/Exception.php');
+        // require_once ('MarketplaceWebService/Exception.php');
         $ex = new MarketplaceWebService_Exception(array ('Message' => $message, 'StatusCode' => $status, 'ErrorCode' => $code,
                                                               'ErrorType' => 'Unknown', 'RequestId' => $requestId, 'XML' => $responseBody));
       } elseif (preg_match('@<Error><Type>(.*)</Type><Code>(.*)</Code><Message>(.*)</Message>.*</Error>.*(<Error>)?.*<RequestId>(.*)</RequestId>@mi',
@@ -842,16 +842,16 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
         $code = $errorMatcherThree[2];
         $message = $errorMatcherThree[3];
         $requestId = $errorMatcherThree[5];
-        require_once ('MarketplaceWebService/Exception.php');
+        // require_once ('MarketplaceWebService/Exception.php');
         $ex = new MarketplaceWebService_Exception(array ('Message' => $message, 'StatusCode' => $status, 'ErrorCode' => $code,
                                                               'ErrorType' => $type, 'RequestId' => $requestId, 'XML' => $responseBody));
 
       } else {
-        require_once ('MarketplaceWebService/Exception.php');
+        // require_once ('MarketplaceWebService/Exception.php');
         $ex = new MarketplaceWebService_Exception(array('Message' => 'Internal Error', 'StatusCode' => $status));
       }
     } else {
-      require_once ('MarketplaceWebService/Exception.php');
+      // require_once ('MarketplaceWebService/Exception.php');
       $ex = new MarketplaceWebService_Exception(array('Message' => 'Internal Error', 'StatusCode' => $status));
     }
     return $ex;
@@ -926,7 +926,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
     rewind($streamHandle);
 
     if (!($receivedMd5Hash === $expectedMd5Hash)) {
-      require_once ('MarketplaceWebService/Exception.php');
+      // require_once ('MarketplaceWebService/Exception.php');
       throw new MarketplaceWebService_Exception(
           array(
             'Message' => 'Received Content-MD5 = ' . $receivedMd5Hash . ' but expected ' . $expectedMd5Hash, 
@@ -1035,7 +1035,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
     if ($requestType == RequestType::POST_UPLOAD) {
 
       if (is_null($streamHandle) || !is_resource($streamHandle)) {
-        require_once ('MarketplaceWebService/Exception.php');
+        // require_once ('MarketplaceWebService/Exception.php');
         throw new MarketplaceWebService_Exception(
           array ('Message' => 'Missing stream resource.'));
       }
@@ -1170,10 +1170,10 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
     $algorithm = "HmacSHA1";
     $stringToSign = null;
     if (0 === $signatureVersion) {
-      throw new InvalidArguementException(
+      throw new InvalidArgumentException(
         'Signature Version 0 is no longer supported. Only Signature Version 2 is supported.');
     } else if (1 === $signatureVersion) {
-      throw new InvalidArguementException(
+      throw new InvalidArgumentException(
         'Signature Version 1 is no longer supported. Only Signature Version 2 is supported.');
     } else if (2 === $signatureVersion) {
       $algorithm = $this->config['SignatureMethod'];
