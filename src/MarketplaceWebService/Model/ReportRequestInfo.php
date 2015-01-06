@@ -69,6 +69,7 @@ class MarketplaceWebService_Model_ReportRequestInfo extends MarketplaceWebServic
         'Scheduled' => array('FieldValue' => null, 'FieldType' => 'bool'),
         'SubmittedDate' => array('FieldValue' => null, 'FieldType' => 'DateTime'),
         'ReportProcessingStatus' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'GeneratedReportId' => array('FieldValue' => null, 'FieldType' => 'string')
         );
         parent::__construct($data);
     }
