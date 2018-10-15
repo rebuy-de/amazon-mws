@@ -40,6 +40,9 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   /** @var string */
   private  $awsSecretAccessKey = null;
 
+  /** @var string */
+  private $mwsAuthToken = null;
+
   /** @var array */
   private  $config = array ('ServiceURL' => null,
                             'UserAgent' => 'PHP Client Library/2011-08-01 (Language=PHP5)',
@@ -88,13 +91,14 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
    * </ul>
    */
   public function __construct(
-  $awsAccessKeyId, $awsSecretAccessKey, $config, $applicationName, $applicationVersion, $attributes = null) {
+  $awsAccessKeyId, $awsSecretAccessKey, $mwsAuthToken, $config, $applicationName, $applicationVersion, $attributes = null) {
 	iconv_set_encoding('output_encoding', 'UTF-8');
     iconv_set_encoding('input_encoding', 'UTF-8');
     iconv_set_encoding('internal_encoding', 'UTF-8');
 
     $this->awsAccessKeyId = $awsAccessKeyId;
     $this->awsSecretAccessKey = $awsSecretAccessKey;
+    $this->mwsAuthToken = (empty($mwsAuthToken) ? null : $mwsAuthToken);
     if (!is_null($config)) 
       $this->config = array_merge($this->config, $config);
      
@@ -1118,6 +1122,9 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
   private function addRequiredParameters(array $parameters)
   {
     $parameters['AWSAccessKeyId'] = $this->awsAccessKeyId;
+    if(!empty($this->mwsAuthToken)) {
+        $parameters['MWSAuthToken'] = $this->mwsAuthToken;
+    }
     $parameters['Timestamp'] = $this->getFormattedTimestamp(new DateTime('now', new DateTimeZone('UTC')));
     $parameters['Version'] = self::SERVICE_VERSION;
     $parameters['SignatureVersion'] = $this->config['SignatureVersion'];
